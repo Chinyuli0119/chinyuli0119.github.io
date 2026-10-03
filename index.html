@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chin Yu (Comas) Li | Portfolio</title>
+  <meta name="description" content="Portfolio of Chin Yu (Comas) Li, a Leadership and Management student at Rutgers University–New Brunswick: skills and projects in process improvement, consulting analysis, and product marketing.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23C3E3F8'/%3E%3Cpath d='M11 8v16h11v-3.4h-7.2V8z' fill='%230F3F66'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sky: #C3E3F8;
+      --blue: #1B6CA8;
+      --blue-deep: #0F3F66;
+      --paper: #F4F9FD;
+      --white: #FFFFFF;
+      --ink: #14263A;
+      --muted: #4A5D6E;
+      --tint: #DCEEFA;
+      --line: #C5DCEC;
+      --before: #B4CCDD;
+      --sans: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      --serif: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.125rem;
+      line-height: 1.65;
+    }
+
+    .wrap { width: min(100% - 2.5rem, 66rem); margin-inline: auto; }
+
+    a { color: inherit; }
+
+    :focus-visible { outline: 3px solid var(--blue-deep); outline-offset: 3px; border-radius: 2px; }
+
+    .skip-link {
+      position: absolute; left: 1rem; top: -4rem;
+      background: var(--blue-deep); color: var(--white);
+      font-family: var(--sans); font-weight: 600;
+      padding: .6rem 1rem; border-radius: 6px; text-decoration: none;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* ---------- Top band: header and personal statement ---------- */
+
+    .top { background: var(--sky); color: var(--ink); }
+
+    .site-header {
+      display: flex; flex-wrap: wrap;
+      justify-content: space-between; align-items: baseline;
+      gap: .75rem 2rem;
+      padding-block: 1.5rem;
+    }
+
+    .site-name {
+      font-family: var(--sans); font-weight: 700; font-size: 1.125rem;
+      text-decoration: none;
+    }
+
+    .site-nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+
+    .site-nav a {
+      font-family: var(--sans); font-size: 1rem;
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      padding-bottom: 2px;
+    }
+    .site-nav a:hover { border-bottom-color: currentColor; }
+
+    .hero { padding-block: clamp(3rem, 9vw, 6.5rem) clamp(3.5rem, 9vw, 7rem); }
+
+    .hero h1 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.6rem, 3.3vw, 2.7rem);
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      margin: 0;
+      max-width: 36ch;
+      text-wrap: balance;
+    }
+
+    .hero-facts {
+      margin: 2rem 0 0;
+      max-width: 60ch;
+      font-size: 1.2rem;
+      color: #2C4A63;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.25rem; }
+
+    .button {
+      display: inline-block;
+      font-family: var(--sans); font-weight: 600; font-size: 1rem; line-height: 1.2;
+      padding: .85rem 1.3rem;
+      border-radius: 6px;
+      border: 1.5px solid transparent;
+      text-decoration: none;
+    }
+    .button-primary { background: var(--blue-deep); color: var(--white); }
+    .button-primary:hover { background: var(--blue); }
+    .button-secondary { border-color: var(--blue-deep); color: var(--blue-deep); }
+    .button-secondary:hover { background: rgba(255, 255, 255, .55); }
+
+    /* ---------- Shared section styles ---------- */
+
+    .section { padding-block: clamp(3.5rem, 8vw, 6rem); }
+    .section-white { background: var(--white); }
+    .section-tint { background: var(--tint); }
+
+    .section h2 {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0 0 2rem;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 14rem 1fr;
+      gap: .75rem 2.5rem;
+      border-top: 1px solid var(--line);
+    }
+
+    /* ---------- Skills ---------- */
+
+    .skill-group { padding-block: 1.4rem; }
+    .skill-group:last-child { border-bottom: 1px solid var(--line); }
+
+    .skill-group h3 {
+      font-family: var(--sans); font-weight: 600; font-size: 1.125rem; line-height: 1.3;
+      margin: .3rem 0 0;
+    }
+
+    .skill-list { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: 0; }
+
+    .skill-list li {
+      font-family: var(--sans); font-weight: 500; font-size: 1rem; line-height: 1.3;
+      background: var(--tint); color: var(--blue-deep);
+      padding: .4rem .75rem;
+      border-radius: 4px;
+    }
+
+    /* ---------- Projects ---------- */
+
+    .project { padding-block: 2.5rem; }
+    .project:last-child { padding-bottom: 0; }
+
+    .project-meta {
+      font-family: var(--sans); font-size: .95rem; line-height: 1.45;
+      color: var(--muted);
+      padding-top: .35rem;
+    }
+    .project-meta p { margin: 0 0 .45rem; }
+    .project-meta .when { color: var(--ink); font-weight: 600; }
+
+    .project-body h3 {
+      font-family: var(--sans); font-weight: 700;
+      font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+      line-height: 1.18;
+      letter-spacing: -0.012em;
+      margin: 0 0 .9rem;
+      max-width: 26ch;
+      text-wrap: balance;
+    }
+
+    .project-body p { margin: 0 0 1rem; max-width: 62ch; }
+
+    .project-link a {
+      font-family: var(--sans); font-weight: 600; font-size: 1rem;
+      color: var(--blue);
+      text-underline-offset: 3px;
+    }
+
+    .results { margin: 1.75rem 0 0; max-width: 38rem; }
+
+    .result { margin-bottom: 1.5rem; }
+
+    .result-title {
+      font-family: var(--sans); font-weight: 600; font-size: 1rem; line-height: 1.35;
+      margin: 0 0 .6rem;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 3.75rem 1fr;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: .4rem;
+      font-family: var(--sans); font-size: .95rem; line-height: 1.2;
+      color: var(--muted);
+    }
+
+    .bar-track { display: flex; align-items: center; gap: .65rem; }
+
+    .bar {
+      flex: 0 0 auto;
+      width: calc((100% - 9.5rem) * var(--share));
+      height: 1.5rem;
+      border-radius: 3px;
+      background: var(--before);
+      transform-origin: left center;
+    }
+    .bar-after { background: var(--blue); }
+
+    .bar-value { color: var(--ink); font-weight: 600; white-space: nowrap; }
+
+    .results figcaption {
+      font-family: var(--sans); font-size: .9rem; line-height: 1.45;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+
+    /* One piece of motion: the bars draw in when the results scroll into view. */
+    .js .results .bar { transform: scaleX(0); }
+    .js .results.is-visible .bar { transform: scaleX(1); transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+    .js .results.is-visible .bar-after { transition-delay: .2s; }
+
+    /* ---------- Contact and footer ---------- */
+
+    .contact p { margin: 0 0 1rem; max-width: 52ch; }
+
+    .contact-email {
+      font-family: var(--sans); font-weight: 700;
+      font-size: clamp(1.3rem, 3.4vw, 2.25rem);
+      letter-spacing: -0.015em;
+      color: var(--blue-deep);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+      overflow-wrap: anywhere;
+    }
+    .contact-email:hover { color: var(--blue); }
+
+    .site-footer {
+      background: var(--tint);
+      border-top: 1px solid var(--line);
+      padding-block: 1.5rem 2rem;
+      font-family: var(--sans); font-size: .9rem;
+      color: var(--muted);
+    }
+    .site-footer p { margin: 0; }
+
+    /* ---------- Small screens ---------- */
+
+    @media (max-width: 44rem) {
+      body { font-size: 1.0625rem; }
+      .row { grid-template-columns: 1fr; }
+      .skill-group h3 { margin-top: 0; }
+      .project-meta { padding-top: 0; }
+      .bar { width: calc((100% - 8.5rem) * var(--share)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .results .bar { transform: none; transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="top">
+    <header class="site-header wrap">
+      <a class="site-name" href="#top" id="top">Chin Yu (Comas) Li</a>
+      <nav class="site-nav" aria-label="Sections">
+        <ul>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 1. PERSONAL STATEMENT -->
+    <section class="hero wrap" aria-label="Personal statement">
+      <h1>I am a Leadership and Management student at Rutgers University–New Brunswick who loves helping teams fix their work processes, using data to support decisions in areas such as marketing and training, and solving the important problems a company faces.</h1>
+      <p class="hero-facts">Graduating May 2028. From Hong Kong, studying in New Jersey.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#projects">See my projects</a>
+        <a class="button button-secondary" href="mailto:cl1776@scarletmail.rutgers.edu">Email me</a>
+      </div>
+    </section>
+  </div>
+
+  <main id="main">
+
+    <!-- 2. SKILLS -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <h2>Skills</h2>
+
+        <div class="row skill-group">
+          <h3>Leading teams</h3>
+          <ul class="skill-list">
+            <li>Team leadership</li>
+            <li>Training program development</li>
+            <li>Cross-department coordination</li>
+            <li>Process improvement</li>
+            <li>Project management</li>
+          </ul>
+        </div>
+
+        <div class="row skill-group">
+          <h3>Working with data</h3>
+          <ul class="skill-list">
+            <li>SQL</li>
+            <li>Excel: data cleaning, modeling, visualization</li>
+            <li>ROI assessment</li>
+            <li>Sensitivity analysis</li>
+            <li>Risk identification</li>
+          </ul>
+        </div>
+
+        <div class="row skill-group">
+          <h3>Marketing and research</h3>
+          <ul class="skill-list">
+            <li>SWOT analysis</li>
+            <li>Marketing funnel</li>
+            <li>Google Analytics</li>
+            <li>SpyFu</li>
+            <li>Product marketing plans</li>
+          </ul>
+        </div>
+
+        <div class="row skill-group">
+          <h3>Office systems</h3>
+          <ul class="skill-list">
+            <li>Microsoft 365</li>
+            <li>Google Drive</li>
+            <li>OA systems</li>
+          </ul>
+        </div>
+
+        <div class="row skill-group">
+          <h3>Languages</h3>
+          <ul class="skill-list">
+            <li>Cantonese (native)</li>
+            <li>Mandarin (C2)</li>
+            <li>English (B2)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROJECTS -->
+    <section class="section section-white" id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+
+        <!-- Project 1 -->
+        <article class="row project">
+          <div class="project-meta">
+            <p class="when">June to August 2025</p>
+            <p>Assistant Supervisor of the Sales Office</p>
+            <p>Guangzhou Conghua Qingyun Real Estate Development Co., Ltd.</p>
+          </div>
+          <div class="project-body">
+            <h3>Shared office systems and an intern training program for a sales office</h3>
+            <p>I supported a team of about 15 people and directly managed the interns. I introduced integrated office systems (an OA system, Google Drive, and Microsoft 365) so the team could find and share documents in one place.</p>
+            <p>I also designed a standard training and task management system for interns, which helped the office cover seasonal staffing gaps.</p>
+
+            <figure class="results">
+              <div class="result">
+                <p class="result-title">Weekly time spent finding and sharing documents</p>
+                <div class="bar-row">
+                  <span>Before</span>
+                  <div class="bar-track"><span class="bar" style="--share: 1"></span><span class="bar-value">Baseline</span></div>
+                </div>
+                <div class="bar-row">
+                  <span>After</span>
+                  <div class="bar-track"><span class="bar bar-after" style="--share: 0.8"></span><span class="bar-value">Over 20% less</span></div>
+                </div>
+              </div>
+
+              <div class="result">
+                <p class="result-title">Time until an intern handles core support tasks independently</p>
+                <div class="bar-row">
+                  <span>Before</span>
+                  <div class="bar-track"><span class="bar" style="--share: 1"></span><span class="bar-value">8 weeks</span></div>
+                </div>
+                <div class="bar-row">
+                  <span>After</span>
+                  <div class="bar-track"><span class="bar bar-after" style="--share: 0.625"></span><span class="bar-value">5 weeks</span></div>
+                </div>
+              </div>
+
+              <figcaption>Results measured during the three-month role. Bars are drawn to scale.</figcaption>
+            </figure>
+
+            <!-- To add a link later, paste this line here and change the address and text:
+            <p class="project-link"><a href="https://example.com">View the training plan</a></p>
+            -->
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="row project">
+          <div class="project-meta">
+            <p class="when">Summer 2024</p>
+            <p>Consulting practical project</p>
+            <p>Led by a Senior Product Manager from Amazon</p>
+          </div>
+          <div class="project-body">
+            <h3>Consulting project: diagnosing a problem and testing the return</h3>
+            <p>A hands-on consulting project that followed the full process, from diagnosing the problem to recommending a solution.</p>
+            <p>I cleaned, modeled, and visualized data in SQL and Excel, ran return on investment and sensitivity analyses to compare project options, and built risk identification and basic quantification into the strategy and operations recommendations.</p>
+
+            <!-- To add a link later, paste this line here and change the address and text:
+            <p class="project-link"><a href="https://example.com">View the slides</a></p>
+            -->
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="row project">
+          <div class="project-meta">
+            <p class="when">Winter 2024</p>
+            <p>Industry marketing practical project</p>
+            <p>Led by a Product Marketing Manager from Microsoft</p>
+          </div>
+          <div class="project-body">
+            <h3>A complete product marketing plan, from research to budget</h3>
+            <p>I used SWOT analysis and the marketing funnel to find the market opportunity and map the customer conversion path, then used SpyFu and Google Analytics to study competitors, traffic, and conversion.</p>
+            <p>I developed and presented the full plan: target users, channel strategy, budget allocation, and key KPIs.</p>
+
+            <!-- To add a link later, paste this line here and change the address and text:
+            <p class="project-link"><a href="https://example.com">View the marketing plan</a></p>
+            -->
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section-tint contact" id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Email is the best way to reach me.</p>
+        <a class="contact-email" href="mailto:cl1776@scarletmail.rutgers.edu">cl1776@scarletmail.rutgers.edu</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Chin Yu (Comas) Li, 2026. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) return;
+      document.documentElement.classList.add('js');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('.results').forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+</body>
+</html>
